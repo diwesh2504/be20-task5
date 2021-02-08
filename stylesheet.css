@@ -1,0 +1,35 @@
+.header{
+    background-color: brown;
+    text-align: center;
+    color:white;
+}
+a{
+    text-decoration: underline;
+    color: orange;
+}
+.frm{
+    display: grid;
+    grid-template-columns: 2% 98%;
+    border: 0.5px solid black;
+}
+.name-block{
+    display: inline-block;
+    margin-right: 15em;
+}
+.frm-2{
+    display: grid;
+    grid-template-columns: 2% 46% 52%;
+    border: 0.5px solid black;
+}
+.down{
+    display: grid;
+    grid-template-columns:repeat(4,1fr); 
+}
+.already{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+div{
+    background-color: rgb(255, 245, 227);
+}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+</head>
+<body>
+    <div class="header">Request for new PAN Card and/or changes or correction in pan card details <br/>
+    Fields marked with <span style="color: red;text-decoration: none;">*</span>(asterisk) are compulsory.To avoid mistake(s) please refer <a>guidelines</a> and <a>instructions</a></div>
+    <form onsubmit="display()">
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <span style="color: red;text-decoration: none;">*</span><b>Whether citizen of india?&emsp;</b>
+            <label for="d1-yes">Yes</label>
+            <input type="radio" id="d1-yes" name="citizen?" value="yes"/>
+            <label for="d1-no">No</label>
+            <input type="radio" id="d1-no" name="citizen?" value="no"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <span style="color: red;text-decoration: none;">*</span>
+            <label for="PAN-no"><b>Permanent Account Number(PAN)</b>&emsp;</label>
+            <input type="text" id="PAN-no" name="PAN-no"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <span style="color: red;text-decoration: none;">*</span><b>1.Name</b>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>Title</b>&emsp;
+            <label for="title-shri/mr">Shri/Mr</label>
+            <input type="radio" id="title-shri/mr" name="title-prefix" value="shri/mr"/>
+            <label for="title-smt/mrs">Smt./Mrs</label>
+            <input type="radio" id="title-smt/mrs" name="title-prefix" value="smt/mrs"/>
+            <label for="title-kumari/ms">Kumari/Ms.</label>
+            <input type="radio" id="title-kumari/ms" name="title-prefix" value="kumari/ms"/> 
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <div class="name-block">
+                <label style="display:block;" for="name-last"><b>Last Name/Surname</b></label>
+                <input type="text" id="name-last" name="name-last"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="name-first"><b>First Name</b></label>
+                <input type="text" id="name-first" name="name-first"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="name-middle"><b>Middle Name</b></label>
+                <input type="text" id="name-middle" name="name-middle"/>
+            </div>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <label style="display:block;" for="name-first"><span style="color: red;text-decoration: none;">*</span><b>Name as you would like it printed on the card</b><span style="color: rgb(20, 120, 235);">(Prefix like Shri, Smt, Kumari, Late,Dr,CA,Ms,Mr,Mrs,M/s,Alias etc. are not allowed)</span></label>
+            <input style="margin-left: 10px;" type="text" id="name-first" name="name-first"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>Details of Parents.</b><span style="color: rgb(20, 120, 235);">(Prefix like Shri, Smt, Kumari, Late,Dr,CA,Ms,Mr,Mrs,M/s,Alias etc. are not allowed)</span></div> 
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Whether mother is single parent and you wish to apply for PAN byfurnishing the name of your mother only</b></div>
+        <div>
+            <label for="m-yes">Yes</label>
+            <input type="radio" id="m-yes" name="m" value="yes"/>
+            <label for="m-no">No</label>
+            <input type="radio" id="m-no" name="m" value="no"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"/></div>
+        <div>
+            <span style="color: red;text-decoration: none;">*</span><b>Father's Name</b><span style="color: rgb(20, 120, 235);">(Mandatory field. Even married women should give father's name only.)</span>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <div class="name-block">
+                <label style="display:block;" for="f-name-last"><b>Last Name/Surname</b></label>
+                <input type="text" id="f-name-last" name="f-name-last"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="f-name-first"><b>First Name</b></label>
+                <input type="text" id="f-name-first" name="f-name-first"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="f-name-middle"><b>Middle Name</b></label>
+                <input type="text" id="f-name-middle" name="f-name-middle"/>
+            </div>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"/></div>
+        <div>
+            <b>Mother's Name</b><span style="color: rgb(20, 120, 235);">(This field is optional.)</span>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            <div class="name-block">
+                <label style="display:block;" for="m-name-last"><b>Last Name/Surname</b></label>
+                <input type="text" id="m-name-last" name="m-name-last"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="m-name-first"><b>First Name</b></label>
+                <input type="text" id="m-name-first" name="m-name-first"/>
+            </div>
+            <div class="name-block">
+                <label style="display:block;" for="m-name-middle"><b>Middle Name</b></label>
+                <input type="text" id="m-name-middle" name="m-name-middle"/>
+            </div>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black">
+            <span style="color: red;text-decoration: none;">*</span><b>4.Select Parent name which is to be printed  on the card</b><span style="color: rgb(20, 120, 235);display: block;">(in case no option is provided then PAN card will be issued with the father's name)</span>
+        </div>
+        <div>
+            <label for="f-card">Father's Name</label>
+            <input type="radio" id="f-card" name="f-card" value="f-card"/>
+            <label for="m-card">Mother's Name</label>
+            <input type="radio" id="m-card" name="f-card" value="m-card"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>5.Date of Birth/Incorporation/Agreement/Partnership or Trust Deed/Formation of Body of Individuals/Association of Persons</b>
+        </div>
+        <div >
+            <label style="display: block;margin-left: 5px;" for="dob">DD&emsp;MM&emsp;YY&emsp;</label>
+            <input style="display: block;margin-left: 5px;" type="date" name="dob" id="dob"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>6.Gender</b></div>
+        <div>
+            <label for="gender-m">Male</label>
+            <input type="radio" id="gender-m" name="gender" value="gender-m"/>
+            <label for="gender-f">Female</label>
+            <input type="radio" id="gender-f" name="gender" value="gender-f"/>
+            <label for="gender-t">TransGender</label>
+            <input type="radio" id="gender-t" name="gender" value="gender-t"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>7.Photo Mismatch</b></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>8.Signature Mismatch</b></div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>9.Address for Communication</b></div>
+        <div>
+            <label for="add-r">Residential</label>
+            <input type="radio" id="add-r" name="add" value="add-r"/>
+            <label for="add-o">Office</label>
+            <input type="radio" id="add-o" name="add" value="add-o"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Office Name</b><i>(to be filled only in the case of office address)</i></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="office-add" id="office-add"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Flat/Door/Block No.</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="add-1" id="add-1"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Name of Premises/Building/Village</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="add-2" id="add-2"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Road/Street/Lane/Post Office</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="add-3" id="add-3"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Area/Locality/Taluka/Sub-Division</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="add-4" id="add-4"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Town/City/District</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="add-5" id="add-5"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>State/Union Territory</b></div>
+        <div>
+            <select name="state" id="state">
+                <option value="default">-- Please Select --</option>
+                <option value="wb">West Bengal</option>
+                <option value="jh">Jharkhand</option>
+                <option value="br">Bihar</option>
+              </select>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>PIN</b><i>(indicating PIN is mandatory)</i></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="pin" id="pin"/>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Country</b></div>
+        <div>
+            <select name="country" id="country" disabled>
+                <option value="default">-- Please Select --</option>
+            </select>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Zip</b></div>
+        <div>
+            <input style="margin: 2px;" type="text" name="zip" id="zip"/>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div><b>10.If you desire to update your other address, give required details and <u>Submit proof of other address also.</u></b></div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black;text-align:justify"><span style="color: red;">*</span><b>11.Telephone No</b><span style="display: block;">(Country code is compulsory)</span></div>
+        <div>
+            <label for="country_code" style="display: block;">Country code (ISD code)</label>
+            <select style="display: block;" name="country_code" id="country_code">
+                <option value="default">-- Please Select --</option>
+                <option value="ind">+91</option>
+                <option value="usa">+44</option>
+                <option value="eng">+33</option>
+              </select>
+              <div style="display: grid;grid-template-columns:1fr 1fr;">
+                    <div style="border-top:0.5px solid black;border-right: 0.5px solid black;">
+                        <label for="mob">Mobile No</label>
+                        <input type="radio" name="phn" id="mob">
+                    </div>
+                    <div style="border-top:0.5px solid black;border-right: 0.5px solid black;">
+                        <label for="tele">Telephone No</label>
+                        <input type="radio" name="phn" id="tele">
+                    </div>
+              </div>
+              <div style="display: grid;grid-template-columns:1fr 1fr;">
+                <div style="border-top:0.5px solid black;border-right: 0.5px solid black;">
+                    <label for="area_code">Area/STD code</label>
+                    <input style="display: block;margin-left: 5px;" type="text" name="area_code" id="area_code">
+                </div>
+                <div style="border-top:0.5px solid black;border-right: 0.5px solid black;">
+                    <label for="mob_no">Mobile/Telephone No.</label>
+                    <input style="display: block;margin-left: 5px;" type="text" name="mob_no" id="mob_no">
+                </div>
+          </div>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>Email ID</b></div>
+        <div>
+            <input type="text" name="email" id="email">
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black">In case of citizen of India, then</div>
+        <div>
+            <input type="radio" name="adei" id="adhar">
+            <label for="adhar">AADHAAR</label>
+            <input type="radio" name="adei" id="ei">
+            <label for="ei">EID</label>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span><b>12.AADHAAR Number</b></div>
+        <div>
+            <input type="text" name="adhar_number" id="adhar_number">
+            <span style="display: block;color:rgb(20, 120, 235);">In case AADHAAR number is provided,then proof of AADHAAR along with supporting documents is to be submitted to NSDL</span>
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><span style="color: red;">*</span>Name as per AADHAAR letter <span style="display: block;">or</span> as the the enrollment ID of AADHAAR application form</div>
+        <div style="margin-top: 15px;">
+            <input type="text" name="adhar_name" id="adhar_name">
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black"><b>13.GSTN</b></div>
+        <div>
+            <input type="text" name="gstn" id="gstn">
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="checkbox"></div>
+        <div><b>14.Mention other Permanent Account Numbers(PANs) if any, inadvertently alloted to you.<u>Submit proof of surrendered PAN(s) along with the application</u></b></div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black">
+            <label for="pan1">PAN1</label>
+            <input type="text" name="pan1" id="pan1">
+        </div>
+        <div>
+            <label for="pan2">PAN2</label>
+            <input type="text" name="pan2" id="pan2">
+        </div>
+    </div>
+    <div class="frm-2">
+        <div style="border-right:0.5px solid black"></div>
+        <div style="border-right:0.5px solid black">
+            <label for="pan3">PAN3</label>
+            <input type="text" name="pan3" id="pan3">
+        </div>
+        <div>
+            <label for="pan4">PAN4</label>
+            <input type="text" name="pan4" id="pan4">
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>15.Verification</b></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>I/We <span><input type="text" name="verify-1" id="verify-1"></span> ,the applicant, in capacity of <span><select><option>--Please Select--</option></select></span> do hereby declare that what is stated above is true to the best of information and belief,
+            <span style="display: block;">I have enclosed <span><input type="text" id="verify-2"></span> (number of documents) in support of proposed changes/corrections.</span>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>Place <span><input type="text" name="place" id="place"></span></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div>
+            I/We, have enclosed <span><select><option>--Please Select</option></select></span> as proof of identity,
+            <span><select><option>--Please Select</option></select></span>as proof of address,
+            <span style="display: block;"><span><select><option>--Please Select</option></select></span>as proof of date of birth and <span><select><option>--Please Select</option></select></span>as proof of PAN allotted.</span>
+        </div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>Whether you wish to have?</b>&emsp;
+            <label for="p-pan">Physical PAN Card & e-PAN Card</label>
+            <input type="radio" name="pan-type" id="p-pan">&emsp;
+            <label for="e-pan">Only e-PAN card</label>
+            <input type="radio" name="pan-type" id="e-pan">&emsp;
+            <b><i><u>Fees applicable</u></i></b>
+        </div>
+    </div> 
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>Other details</b></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>1.Depository Account Details</b></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>DP ID:</b><span><input type="text" name="dpid" id="dpid"></span>&emsp;<b>Client ID:</b><span><input type="text" name="cid" id="cid"></span></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"></div>
+        <div><b>2.Payment Details</b></div>
+    </div>
+    <div class="frm">
+        <div style="border-right:0.5px solid black"><input type="radio" name="payment" id="payment"></div>
+        <div><b>Online Payment</b></div>
+    </div>
+    <div>
+        
+        <div>For Paperless PAN Application: &emsp;
+            <label for="pan-y">Yes</label>
+            <input type="radio" name="pan-y" id="pan-y">&emsp;
+            <label for="pan-n">No</label>
+            <input type="radio" name="pan-y" id="pan-n">&emsp;
+            
+        </div>
+    </div>
+    <div>
+        <span><input type="radio" name="radio" id="radio"><label for="radio">DSC</label>&emsp;<select><option>Please Select</option></select>&emsp;<u style="color: sienna;">Guidelines for DSC User</u></span>
+    </div>
+    <div class="down">
+        <div>Upload</div>
+        <div><label for="photo">Photo</label><input type="file" name="photo" id="photo"></div>
+        <div><label for="sign">Signature</label><input type="file" name="sign" id="sign"></div>
+        <div><label for="doc">Document</label><input type="file" name="doc" id="doc"></div>
+    </div>
+    <div style="text-align: center;">
+        <b>OR</b>
+    </div>
+    <div class="already">
+        <div>ALREADY UPLOADED PHOTO</div>
+        <div><input type="text" name="al-photo" id="al-photo"></div>
+    </div>
+    <div class="already">
+        <div>ALREADY UPLOADED SIGNATURE</div>
+        <div><input type="text" name="al-sign" id="al-sign"></div>
+    </div>
+    <div class="already">
+        <div>ALREADY UPLOADED DOCUMENTS</div>
+        <div><textarea name="al-d" id="al-d" rows="4" cols="50"></textarea><br/>
+            <input type="submit" value="submit">
+    </div>
+</form>
+<script>
+    function display(){
+        alert("Form submitted successfully");
+    }
+</script>
+</body>
+</html>
